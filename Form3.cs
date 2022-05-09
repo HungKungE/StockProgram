@@ -17,7 +17,17 @@ namespace StockProgram
             InitializeComponent();
         }
 
-     
+
+        public string ThePrice
+        {
+            get { return txtPrice.Text; }
+        }
+
+        public string TheCount
+        {
+            get { return txtCount.Text; }
+        }
+
 
         private void Form3_Load(object sender, EventArgs e)
         {

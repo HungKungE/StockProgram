@@ -48,8 +48,14 @@ namespace StockProgram
         {
             if (/*어떻게 검색되는지 몰라서 문제*/false)
                 MessageBox.Show("잘못된 종목명입니다.");
-            var myForm = new Form3();
-            myForm.Show();
+            using (Form3 form3 = new Form3())
+            {
+                if (form3.ShowDialog() == DialogResult.OK)
+                {
+                   // someControlOnForm1.Text = form3.TheCount;
+                   // someControlOnForm1.Text = form3.ThePrice;
+                }
+            }
         }
 
         private void btnSell_Click(object sender, EventArgs e)
