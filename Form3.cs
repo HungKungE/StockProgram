@@ -36,7 +36,7 @@ namespace StockProgram
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-           
+           // Form form2 = obj as Form;
         }
 
         private void btnSell_Click(object sender, EventArgs e)

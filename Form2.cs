@@ -78,7 +78,7 @@ namespace StockProgram
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            if (/*어떻게 검색되는지 몰라서 문제*/false)
+            if (/*txtSearch.text 가 안에 있는지 확인 */false)
                 MessageBox.Show("잘못된 종목명입니다.");
 
             var lvwItem = new ListViewItem(new string[lvwStockInfo.Columns.Count]);
@@ -107,6 +107,30 @@ namespace StockProgram
                     // lvwStockInfo.FocusedItem.SubItems[5].Text = (int.Parse(lvwStockInfo.FocusedItem.SubItems[5].Text) - 3).ToString();
                     lvwStockInfo.FocusedItem.SubItems[5].Text = 5.ToString();
                 }
+            }
+        }
+
+        private void btnMoneyAdd_Click(object sender, EventArgs e)
+        {
+            lblNowMoney.Text = (long.Parse(lblNowMoney.Text) + long.Parse(txtInput.Text)).ToString();
+            if (lblNowMoney.Right > this.Width)
+                lblNowMoney.Left = this.Width - lblNowMoney.Width;
+        }
+
+        private void btnMoneySub_Click(object sender, EventArgs e)
+        {
+            lblNowMoney.Text = (long.Parse(lblNowMoney.Text) - long.Parse(txtInput.Text)).ToString();
+            if (long.Parse(lblNowMoney.Text) < 0)
+                lblNowMoney.Text = 0.ToString();
+            if (lblNowMoney.Right > this.Width)
+                lblNowMoney.Left = this.Width - lblNowMoney.Width;
+        }
+
+        private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }
