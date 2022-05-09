@@ -17,12 +17,6 @@ namespace StockProgram
             InitializeComponent();
         }
 
-
-        public string ThePrice
-        {
-            get { return txtPrice.Text; }
-        }
-
         public string TheCount
         {
             get { return txtCount.Text; }
@@ -38,6 +32,16 @@ namespace StockProgram
         {
             if (char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

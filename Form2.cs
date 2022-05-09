@@ -35,12 +35,44 @@ namespace StockProgram
             lvwStockInfo.Columns.Add("Profit", "수익률");
             //lvwStockInfo.Columns.Add("Profit", "수익금");
             lvwStockInfo.Columns.Add("Count", "보유 주식수");
-            lvwStockInfo.Columns.Add("last", "last");
 
             lvwStockInfo.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            lvwStockInfo.Columns.RemoveByKey("last");
 
-            //lvwStockInfo.Columns[0].Text
+            var lvwItem = new ListViewItem("스마트팜");
+            
+            
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+
+            lvwStockInfo.Items.Add(lvwItem);
+
+            lvwItem = new ListViewItem(new string[lvwStockInfo.Columns.Count]);
+
+            lvwItem.SubItems.Add("스마트팜");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+
+            lvwStockInfo.Items.Add(lvwItem);
+
+            lvwItem = new ListViewItem(new string[lvwStockInfo.Columns.Count]);
+
+            lvwItem.SubItems.Add("스마트팜");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+            lvwItem.SubItems.Add("5000");
+
+            lvwStockInfo.Items.Add(lvwItem);
+           
+
+            
 
         }
 
@@ -48,12 +80,17 @@ namespace StockProgram
         {
             if (/*어떻게 검색되는지 몰라서 문제*/false)
                 MessageBox.Show("잘못된 종목명입니다.");
+
+            var lvwItem = new ListViewItem(new string[lvwStockInfo.Columns.Count]);
+
+            for (int i = 0; i<lvwStockInfo.Columns.Count; i++)
+                lvwItem.SubItems[i].Name = lvwStockInfo.Columns[i].Name;
+
             using (Form3 form3 = new Form3())
             {
                 if (form3.ShowDialog() == DialogResult.OK)
                 {
-                   // someControlOnForm1.Text = form3.TheCount;
-                   // someControlOnForm1.Text = form3.ThePrice;
+                   //someControlOnForm1.Text = form3.TheCount;
                 }
             }
         }
@@ -61,7 +98,16 @@ namespace StockProgram
         private void btnSell_Click(object sender, EventArgs e)
         {
             if (lvwStockInfo.FocusedItem == null) return;
-            lvwStockInfo.FocusedItem.Remove();
+            
+            //생각해보니 다 안팔수도 있어서 remove가 아니라 소유 개수만 줄여야 할수있음.
+            using (Form3 form3 = new Form3())
+            {
+                if (form3.ShowDialog() == DialogResult.OK)
+                {
+                    // lvwStockInfo.FocusedItem.SubItems[5].Text = (int.Parse(lvwStockInfo.FocusedItem.SubItems[5].Text) - 3).ToString();
+                    lvwStockInfo.FocusedItem.SubItems[5].Text = 5.ToString();
+                }
+            }
         }
     }
 }
