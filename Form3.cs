@@ -12,6 +12,9 @@ namespace StockProgram
 {
     public partial class Form3 : Form
     {
+        public delegate void ChildFormSnedDataHandler(string message);
+        public event ChildFormSnedDataHandler ChildFormEvent;
+
         public Form3()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace StockProgram
         public string TheCount
         {
             get { return txtCount.Text; }
+
         }
 
 
@@ -36,12 +40,18 @@ namespace StockProgram
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-           
+            if (ChildFormEvent != null)
+            {
+                ChildFormEvent("-"+this.TheCount);
+            }
         }
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-
+            if (ChildFormEvent != null)
+            {
+                ChildFormEvent(this.TheCount);
+            }
         }
     }
 }

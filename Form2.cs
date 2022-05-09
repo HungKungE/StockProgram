@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace StockProgram
 {
+    
     public partial class Form2 : Form
     {
 
@@ -83,8 +84,10 @@ namespace StockProgram
 
             var lvwItem = new ListViewItem(new string[lvwStockInfo.Columns.Count]);
 
-            for (int i = 0; i<lvwStockInfo.Columns.Count; i++)
+            for (int i = 0; i<lvwStockInfo.Columns.Count; i++) {
                 lvwItem.SubItems[i].Name = lvwStockInfo.Columns[i].Name;
+            }
+                
 
             using (Form3 form3 = new Form3())
             {
@@ -94,7 +97,10 @@ namespace StockProgram
                 }
             }
         }
-
+        private void sell(string how)
+        {
+            lvwStockInfo.FocusedItem.SubItems[5].Text = (int.Parse(lvwStockInfo.FocusedItem.SubItems[5].Text) - int.Parse(how)).ToString();
+        }
         private void btnSell_Click(object sender, EventArgs e)
         {
             if (lvwStockInfo.FocusedItem == null) return;
@@ -102,11 +108,9 @@ namespace StockProgram
             //생각해보니 다 안팔수도 있어서 remove가 아니라 소유 개수만 줄여야 할수있음.
             using (Form3 form3 = new Form3())
             {
-                if (form3.ShowDialog() == DialogResult.OK)
-                {
-                    // lvwStockInfo.FocusedItem.SubItems[5].Text = (int.Parse(lvwStockInfo.FocusedItem.SubItems[5].Text) - 3).ToString();
-                    lvwStockInfo.FocusedItem.SubItems[5].Text = 5.ToString();
-                }
+                form3.ChildFormEvent += sell;
+                form3.ShowDialog();
+                form3.Owner = this;
             }
         }
     }
