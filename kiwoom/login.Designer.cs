@@ -68,12 +68,38 @@ namespace kiwoom
             this.diff = new System.Windows.Forms.Label();
             this.volume = new System.Windows.Forms.Label();
             this.percent = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.cmbAcc = new System.Windows.Forms.ComboBox();
+            this.numUpDown = new System.Windows.Forms.NumericUpDown();
+            this.priceUpDown = new System.Windows.Forms.NumericUpDown();
+            this.cmbSep = new System.Windows.Forms.ComboBox();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvAcc = new System.Windows.Forms.DataGridView();
+            this.dgvUn = new System.Windows.Forms.DataGridView();
+            this.btnAccUn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpDown)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUn)).BeginInit();
             this.SuspendLayout();
             // 
             // axKHOpenAPI1
@@ -372,9 +398,9 @@ namespace kiwoom
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSearch, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(18, 153);
+            this.tableLayoutPanel3.Controls.Add(this.txtSearch, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(16, 118);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -409,11 +435,11 @@ namespace kiwoom
             this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.종목조회_종목코드,
             this.종목조회_종목명});
-            this.dgvItem.Location = new System.Drawing.Point(18, 186);
+            this.dgvItem.Location = new System.Drawing.Point(12, 151);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.RowHeadersVisible = false;
             this.dgvItem.RowTemplate.Height = 23;
-            this.dgvItem.Size = new System.Drawing.Size(206, 150);
+            this.dgvItem.Size = new System.Drawing.Size(206, 432);
             this.dgvItem.TabIndex = 7;
             // 
             // 종목조회_종목코드
@@ -445,7 +471,7 @@ namespace kiwoom
             this.tableLayoutPanel4.Controls.Add(this.diff, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.volume, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.percent, 0, 4);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(457, 167);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(224, 151);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -586,14 +612,247 @@ namespace kiwoom
             this.percent.Text = "등락율";
             this.percent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label12, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.label13, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtCode, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cmbAcc, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.numUpDown, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.priceUpDown, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.cmbSep, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.btnBuy, 0, 5);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(224, 272);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 6;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 222);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 35);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "계좌번호";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 35);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "종목코드";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 35);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "수량";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 109);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 35);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "가격";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 145);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 35);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "거래구분";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(103, 40);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(93, 21);
+            this.txtCode.TabIndex = 5;
+            // 
+            // cmbAcc
+            // 
+            this.cmbAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAcc.FormattingEnabled = true;
+            this.cmbAcc.Location = new System.Drawing.Point(103, 4);
+            this.cmbAcc.Name = "cmbAcc";
+            this.cmbAcc.Size = new System.Drawing.Size(93, 20);
+            this.cmbAcc.TabIndex = 6;
+            // 
+            // numUpDown
+            // 
+            this.numUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numUpDown.Location = new System.Drawing.Point(103, 76);
+            this.numUpDown.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+            this.numUpDown.Name = "numUpDown";
+            this.numUpDown.Size = new System.Drawing.Size(93, 21);
+            this.numUpDown.TabIndex = 7;
+            // 
+            // priceUpDown
+            // 
+            this.priceUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceUpDown.Location = new System.Drawing.Point(103, 112);
+            this.priceUpDown.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.priceUpDown.Name = "priceUpDown";
+            this.priceUpDown.Size = new System.Drawing.Size(93, 21);
+            this.priceUpDown.TabIndex = 8;
+            // 
+            // cmbSep
+            // 
+            this.cmbSep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSep.FormattingEnabled = true;
+            this.cmbSep.Location = new System.Drawing.Point(103, 148);
+            this.cmbSep.Name = "cmbSep";
+            this.cmbSep.Size = new System.Drawing.Size(93, 20);
+            this.cmbSep.TabIndex = 9;
+            this.cmbSep.Text = "선택";
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.SetColumnSpan(this.btnBuy, 2);
+            this.btnBuy.Location = new System.Drawing.Point(4, 184);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(192, 34);
+            this.btnBuy.TabIndex = 10;
+            this.btnBuy.Text = "현금매수";
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(224, 496);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(724, 100);
+            this.tabControl1.TabIndex = 9;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgvAcc);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(716, 74);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "잔고";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgvUn);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(716, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "미체결";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvAcc
+            // 
+            this.dgvAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAcc.Location = new System.Drawing.Point(0, 0);
+            this.dgvAcc.Name = "dgvAcc";
+            this.dgvAcc.RowTemplate.Height = 23;
+            this.dgvAcc.Size = new System.Drawing.Size(716, 78);
+            this.dgvAcc.TabIndex = 0;
+            // 
+            // dgvUn
+            // 
+            this.dgvUn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUn.Location = new System.Drawing.Point(0, 0);
+            this.dgvUn.Name = "dgvUn";
+            this.dgvUn.RowTemplate.Height = 23;
+            this.dgvUn.Size = new System.Drawing.Size(716, 74);
+            this.dgvUn.TabIndex = 0;
+            // 
+            // btnAccUn
+            // 
+            this.btnAccUn.BackColor = System.Drawing.Color.White;
+            this.btnAccUn.Location = new System.Drawing.Point(430, 471);
+            this.btnAccUn.Name = "btnAccUn";
+            this.btnAccUn.Size = new System.Drawing.Size(102, 23);
+            this.btnAccUn.TabIndex = 1;
+            this.btnAccUn.Text = "잔고미체결조회";
+            this.btnAccUn.UseVisualStyleBackColor = false;
+            this.btnAccUn.Click += new System.EventHandler(this.btnAccUn_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1099, 595);
+            this.Controls.Add(this.btnAccUn);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.dgvItem);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnAccCheck);
@@ -612,6 +871,15 @@ namespace kiwoom
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpDown)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,6 +924,24 @@ namespace kiwoom
         private System.Windows.Forms.Label diff;
         private System.Windows.Forms.Label volume;
         private System.Windows.Forms.Label percent;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.ComboBox cmbAcc;
+        private System.Windows.Forms.NumericUpDown numUpDown;
+        private System.Windows.Forms.NumericUpDown priceUpDown;
+        private System.Windows.Forms.ComboBox cmbSep;
+        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dgvAcc;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgvUn;
+        private System.Windows.Forms.Button btnAccUn;
     }
 }
 
