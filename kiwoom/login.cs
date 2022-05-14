@@ -12,6 +12,7 @@ namespace kiwoom {
     public partial class login : Form {
         List<unbuy> unbuyList;
         List<balance> balanceList;
+       
         public login() {
             InitializeComponent();
             axKHOpenAPI1.OnReceiveTrData += onReceiveTrData; // 계좌 잔고 불러오는 함수
@@ -93,16 +94,22 @@ namespace kiwoom {
                 int count = axKHOpenAPI1.GetRepeatCnt(e.sTrCode, e.sRQName);
                 dgvAcc.Rows.Clear();
                 for (int i = 0; i < count; i++) {
-                    string code = axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "종목번호").TrimStart('0');
-                    string name = axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "종목명").Trim();
-                    int num = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "보유수량"));
-                    int buys = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "매입가"));
-                    int price = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "현재가"));
-                    int profits = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "평가손익"));
-                    int percentage = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "수익률(%)"));
+                    try {
+                        string code = axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "종목번호").TrimStart('0');
+                        string name = axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "종목명").Trim();
+                        int num = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "보유수량"));
+                        int buys = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "매입가"));
+                        int price = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "현재가"));
+                        int profits = int.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "평가손익"));
+                        double percentage = double.Parse(axKHOpenAPI1.GetCommData(e.sTrCode, e.sRQName, i, "수익률(%)"));
 
-                    balance stockBalance = new balance(code, name, num, buys, price, profits, percentage);
-                    balanceList.Add(stockBalance);
+                        balance stockBalance = new balance(code, name, num, buys, price, profits, percentage);
+
+                        balanceList.Add(stockBalance);
+                    }
+                    catch(Exception exception) {
+                        Console.WriteLine(exception.Message.ToString());
+                    }
                 }
 
                 dgvAcc.DataSource = balanceList;
@@ -176,11 +183,11 @@ namespace kiwoom {
             }
         }
 
-        private void btnAccUn_Click(object sender, EventArgs e) {
+        public void btnAccUn_Click(object sender, EventArgs e) {
 
             unbuyList = new List<unbuy>();
             balanceList = new List<balance>();
-            
+
             string acc = cmbAccount.Text;
 
             axKHOpenAPI1.SetInputValue("계좌번호", acc);

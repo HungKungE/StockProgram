@@ -52,8 +52,8 @@ namespace kiwoom
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvItem = new System.Windows.Forms.DataGridView();
             this.종목조회_종목코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.종목조회_종목명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,8 +82,8 @@ namespace kiwoom
             this.btnBuy = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvAcc = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvUn = new System.Windows.Forms.DataGridView();
             this.btnAccUn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).BeginInit();
@@ -97,8 +97,8 @@ namespace kiwoom
             ((System.ComponentModel.ISupportInitialize)(this.priceUpDown)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcc)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -407,13 +407,6 @@ namespace kiwoom
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 27);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(3, 3);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(94, 21);
-            this.txtSearch.TabIndex = 0;
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -426,6 +419,13 @@ namespace kiwoom
             this.btnSearch.Text = "종목조회";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(3, 3);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(94, 21);
+            this.txtSearch.TabIndex = 0;
             // 
             // dgvItem
             // 
@@ -802,6 +802,15 @@ namespace kiwoom
             this.tabPage1.Text = "잔고";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dgvAcc
+            // 
+            this.dgvAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAcc.Location = new System.Drawing.Point(0, 0);
+            this.dgvAcc.Name = "dgvAcc";
+            this.dgvAcc.RowTemplate.Height = 23;
+            this.dgvAcc.Size = new System.Drawing.Size(716, 78);
+            this.dgvAcc.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvUn);
@@ -812,15 +821,6 @@ namespace kiwoom
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "미체결";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvAcc
-            // 
-            this.dgvAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAcc.Location = new System.Drawing.Point(0, 0);
-            this.dgvAcc.Name = "dgvAcc";
-            this.dgvAcc.RowTemplate.Height = 23;
-            this.dgvAcc.Size = new System.Drawing.Size(716, 78);
-            this.dgvAcc.TabIndex = 0;
             // 
             // dgvUn
             // 
@@ -877,8 +877,8 @@ namespace kiwoom
             ((System.ComponentModel.ISupportInitialize)(this.priceUpDown)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcc)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUn)).EndInit();
             this.ResumeLayout(false);
 
